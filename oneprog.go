@@ -4,6 +4,7 @@ import (
   "fmt"
   "time"
   "math/rand"
+  "mymath"
 )
 func f(n int) {
   for i := 0; i < 5; i++ {
@@ -38,6 +39,13 @@ func main() {
   for i := 0; i < 5; i++ {
     go f(i)
   }
+
+  xs := []float64{1,2,3,4}
+  avg := mymath.Average(xs)
+  fmt.Println(avg)
+  min_xs, max_xs := mymath.MinMax(xs)
+  fmt.Println(min_xs)
+  fmt.Println(max_xs)
 
   var c chan string = make(chan string)
 
